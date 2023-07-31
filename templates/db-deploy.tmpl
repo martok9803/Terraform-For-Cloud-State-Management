@@ -1,0 +1,4 @@
+sudo apt update
+sudo apt install git mysql-client -y
+git clone -b https://github.com/martok9803/terraform-aws-vprofile98.git
+mysql -h ${rds-endpoint} -u ${dbuser} --password=${dbpass} accounts < /home/ubuntu/vprofile98/src/main/resources/db_backup.sql
