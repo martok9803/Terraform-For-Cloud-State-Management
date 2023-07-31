@@ -1,1 +1,11 @@
-# terraform-aws-vprofile98
+# Terraform-For-Cloud-State-Management
+Four Steps that I am going to do :
+1. Setup Terraform with backend so we have a centralized state of terraform or of a cloud infrastructure
+2. Set a VPC - NAT Gateway, Internet Gateway, Subnets so we can have a secure and highly available VPC setup with Terraform
+3. Provision Beanstalk environment with Terraform.
+4. Backend services that I am going to use: RDS, ElastiCache, ActiveMQ
+5. Security groups, Key Pairs, Bastion Host and few other things that I am going to automate and maintain with Terraform
+   I am going to have Terraform on my local machine and I am going to store the state about my infrastructure in an S3 Bucket which will be obviusly in my CloudAccount, and also configure the Terraform with proper authentication. I am going to use Terraform to access my cloud services and create a VPC - a Subnets that are distributed among multiple zones. So i will have a Public Subnet distributed among multiple zones, connected to an Internet Gateway with Route Tables. So I am going to setup route tables and route the traffic to the Internet Gateway. I will also have private subnets again, distributed among multiple zones. In my private subnet i am going to setup services like EC2 Instances, MySQL database or ElastiCache. Of course this private subnet will be connected to a private gateway trough a route table. And to access this entire private systems in my private subnet, i am also going to have a Bastion Host. I am also going to provision this bastion host trough Terraform scripts.
+   So once i have that VPC created I am going to create my infrastructure on that, I am using terraform again and obviously i am going to maintain the state in the S3 Bucket as i said previous. So Terraform   is going to setup a RDS Instance, in private subnet, Elasticache in private subnet, Amazon MQ again in private subnet and beanstalk where the load balancer of the beanstalk will be in public subnet and the Instances will be in private subnet. To access my infrastructure i will also take care of the security group and the rules and also loginkey if i need to log in into my EC2 Instaces which are part of my Beanstalk.
+
+   So there are many variety of tools in the market to automate cloud computing tasks, but i think Terraform is one of the best Cloud Automation Tools.
